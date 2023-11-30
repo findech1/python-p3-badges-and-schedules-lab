@@ -1,22 +1,24 @@
 def badge_maker(name):
-    return f"Hello, my name is {name}."
+    message = "Hello, my name is " + name + "."
+    return message
 
 def batch_badge_creator(names):
-    return [badge_maker(name) for name in names]
-#Usage
-names_list = ["Felix", "Ochieng", "Linder"]
-badge_messages = batch_badge_creator(names_list)
-print(badge_messages)
+    badges = []
+    for name in names:
+        badge = badge_maker(name)
+        badges.append(badge)
+    return badges
+def assign_rooms(names):
+    
+    new_list = [f"Hello, {name}! You'll be assigned to room {names.index(name) + 1}!" for name in names]
+    return new_list
 
-
-def assign_rooms(speakers):
-    rooms = [f"Room {i}" for i in range(1, 8)]  # Creating a list of room numbers
-
-    if len(speakers) > len(rooms):
-    raise ValueError("There are more speakers than available rooms.")
-
-    room_assignments = list(zip(speakers, rooms))
-    return [f"{speaker} is assigned to {room}" for speaker, room in room_assignments]
 
 def printer(names):
-    return None
+    badges = batch_badge_creator(names)
+    for badge in badges:
+        print(badge)
+
+    room_assignments = assign_rooms(names)
+    for assignment in room_assignments:
+        print(assignment)
