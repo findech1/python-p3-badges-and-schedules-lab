@@ -116,7 +116,8 @@ assignments in order to `print` out each individual assignment.
 
 ***
 
-## Resources
+
+# Resources
 
 - [5. Data Structures - Python][data-structures]
 - [Python For Loops - W3schools][for]
